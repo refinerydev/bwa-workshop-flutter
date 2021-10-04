@@ -58,62 +58,108 @@ class MyHomeScreen extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                height: 300,
-                width: 300,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/background.jpeg'),
-                    fit: BoxFit.cover,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 16.0,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 16,
                   ),
-                  borderRadius: BorderRadius.circular(8.0),
-                  // color: Colors.blue
-                ),
-                child: Center(
-                  child: Text(
-                    'My Box',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
+                  Container(
+                    height: 320,
+                    width: 320,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/background.jpeg'),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                      // color: Colors.blue
                     ),
+                    child: Center(
+                      child: Text(
+                        'My Box',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 32.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Container(
+                    height: 320,
+                    width: 320,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/background.jpeg'),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                      // color: Colors.blue
+                    ),
+                    child: Center(
+                      child: Text(
+                        'My Box',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 32.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16.0,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 32.0,
+            ),
+            Container(
+              height: 64.0,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                  ),
+                ),
+                child: Text(
+                  'Get Started',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24.0,
                   ),
                 ),
               ),
-              Container(
-                height: 300,
-                width: 300,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/background.jpeg'),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                  // color: Colors.blue
-                ),
-                child: Center(
-                  child: Text(
-                    'My Box',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+            ),
+            SizedBox(
+              height: 32.0,
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Term & Condition',
+                style: TextStyle(
+                  color: Colors.grey,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-      // body: Center(
-      //   child: Image.asset('assets/car.png'),
-      // ),
     );
   }
 }
