@@ -17,17 +17,28 @@ class DetailScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  padding: EdgeInsets.all(7),
-                  child: Icon(Icons.chevron_left),
-                  decoration: BoxDecoration(
-                    color: whiteColor,
-                    shape: BoxShape.circle,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(7),
+                    child: Icon(
+                      Icons.chevron_left,
+                      size: 24,
+                    ),
+                    decoration: BoxDecoration(
+                      color: whiteColor,
+                      shape: BoxShape.circle,
+                    ),
                   ),
                 ),
                 Container(
                   padding: EdgeInsets.all(7),
-                  child: Icon(Icons.favorite),
+                  child: Icon(
+                    Icons.favorite_outline,
+                    size: 24,
+                  ),
                   decoration: BoxDecoration(
                     color: whiteColor,
                     shape: BoxShape.circle,
