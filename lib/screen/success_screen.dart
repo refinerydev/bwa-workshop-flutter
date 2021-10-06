@@ -17,8 +17,6 @@ class SuccessScreen extends StatelessWidget {
                 ),
                 Image.asset(
                   'assets/image_success.png',
-                  width: 367,
-                  height: 327,
                 ),
                 SizedBox(
                   height: 7,
@@ -38,40 +36,34 @@ class SuccessScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: greyTextStyle.copyWith(
                     fontSize: 16,
+                    fontWeight: medium,
                     height: 1.6,
                   ),
                 ),
-                SizedBox(
-                  height: 40,
-                ),
-                Align(
-                  child: Container(
-                    width: 220,
-                    height: 50,
-                    margin: EdgeInsets.only(
-                      top: 41,
-                      bottom: 47,
-                    ),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: whiteColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(37),
-                        ),
+                Container(
+                  width: 220,
+                  height: 50,
+                  margin: EdgeInsets.only(
+                    top: 40,
+                    bottom: 20,
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      primary: whiteColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(37),
                       ),
-                      onPressed: () {
-                        
-                      },
-                      child: Text(
-                        'Back To Home',
-                        style: blackTextStyle.copyWith(
-                          fontSize: 18,
-                          fontWeight: bold,
-                        ),
+                    ),
+                    child: Text(
+                      'Back To Home',
+                      style: blackTextStyle.copyWith(
+                        fontSize: 18,
+                        fontWeight: extraBold,
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

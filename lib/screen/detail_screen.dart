@@ -1,3 +1,4 @@
+import 'package:flutmov/screen/success_screen.dart';
 import 'package:flutmov/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -236,8 +237,19 @@ class DetailScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(37),
                     ),
                   ),
-                  onPressed: () {},
-                  child: Text('Buy Ticket'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SuccessScreen()),
+                    );
+                  },
+                  child: Text(
+                    'Buy Ticket',
+                    style: whiteTextStyle.copyWith(
+                      fontSize: 18,
+                      fontWeight: bold,
+                    ),
+                  ),
                 ),
               ),
             )
