@@ -1,3 +1,4 @@
+import 'package:flutmov/screen/home_screen.dart';
 import 'package:flutmov/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -40,30 +41,43 @@ class SuccessScreen extends StatelessWidget {
                     height: 1.6,
                   ),
                 ),
-                Container(
-                  width: 220,
-                  height: 50,
-                  margin: EdgeInsets.only(
-                    top: 40,
-                    bottom: 20,
-                  ),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: whiteColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(37),
-                      ),
-                    ),
-                    child: Text(
-                      'Back To Home',
-                      style: blackTextStyle.copyWith(
-                        fontSize: 18,
-                        fontWeight: extraBold,
-                      ),
-                    ),
-                  ),
+                SizedBox(
+                  height: 40,
                 ),
+                Align(
+                  child: Container(
+                    width: 220,
+                    height: 50,
+                    margin: EdgeInsets.only(
+                      top: 40,
+                      bottom: 47,
+                    ),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: whiteColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(37),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => HomeScreen(),
+                          ),
+                          (route) => false,
+                        );
+                      },
+                      child: Text(
+                        'Back To Home',
+                        style: blackTextStyle.copyWith(
+                          fontSize: 18,
+                          fontWeight: bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),
