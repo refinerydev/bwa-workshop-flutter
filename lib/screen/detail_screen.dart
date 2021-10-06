@@ -41,8 +41,8 @@ class DetailScreen extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  width: 100,
-                  height: 127,
+                  width: 120,
+                  height: 157,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(21.0),
                     image: DecorationImage(
