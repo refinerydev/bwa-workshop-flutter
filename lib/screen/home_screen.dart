@@ -1,3 +1,4 @@
+import 'package:flutmov/service/movie_service.dart';
 import 'package:flutmov/theme.dart';
 import 'package:flutmov/widgets/movie_carousell.dart';
 import 'package:flutmov/widgets/movie_list_item.dart';
@@ -6,6 +7,8 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    MoviesService().getNowMovies();
+
     return Scaffold(
       backgroundColor: lightBackgroundColor,
       body: SafeArea(

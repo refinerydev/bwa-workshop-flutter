@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutmov/model/movie_model.dart';
 
 class MoviesService {
   final baseUrl = 'https://api.themoviedb.org';
@@ -6,16 +7,19 @@ class MoviesService {
 
   final dio = Dio();
 
-  getNowMovies() async {
+  Future<List<MovieModel>> getNowMovies() async {
     try {
-      print('test test test ');
       final res = await dio.get('$baseUrl/3/movie/now_playing?api_key=$apiKey');
-      // final res = await http
-      //     .get(Uri.parse('$baseUrl/3/movie/now_playing?api_key=$apiKey'));
-      print('hallo');
-      print(res.data);
+
+      final data = res.data['results'] as List;
+
+      print(data);
+
+      final movies = data.map((e) => MovieModel.fromJson(e)).toList();
+
+      return movies;
     } catch (e) {
-      print(e);
+      throw e;
     }
   }
 }

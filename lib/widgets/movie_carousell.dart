@@ -27,7 +27,7 @@ class MovieCarousellItem extends StatelessWidget {
         );
       },
       child: Container(
-        margin: EdgeInsets.only(left: 24),
+        margin: EdgeInsets.only(left: 24, right: 24),
         width: 300,
         child: Column(
           children: [
@@ -69,7 +69,7 @@ class MovieCarousellItem extends StatelessWidget {
                 Spacer(),
                 Icon(
                   Icons.star,
-                  color: rating >= 2 ? yellowColor : lightGreyColor,
+                  color: rating >= 2 ? yellowColor : greyColor,
                   size: 18.0,
                 ),
                 SizedBox(
@@ -77,7 +77,7 @@ class MovieCarousellItem extends StatelessWidget {
                 ),
                 Icon(
                   Icons.star,
-                  color: rating >= 4 ? yellowColor : lightGreyColor,
+                  color: rating >= 4 ? yellowColor : greyColor,
                   size: 18.0,
                 ),
                 SizedBox(
@@ -85,7 +85,7 @@ class MovieCarousellItem extends StatelessWidget {
                 ),
                 Icon(
                   Icons.star,
-                  color: rating >= 6 ? yellowColor : lightGreyColor,
+                  color: rating >= 6 ? yellowColor : greyColor,
                   size: 18.0,
                 ),
                 SizedBox(
@@ -93,7 +93,7 @@ class MovieCarousellItem extends StatelessWidget {
                 ),
                 Icon(
                   Icons.star,
-                  color: rating >= 8 ? yellowColor : lightGreyColor,
+                  color: rating >= 8 ? yellowColor : greyColor,
                   size: 18.0,
                 ),
                 SizedBox(
@@ -101,7 +101,7 @@ class MovieCarousellItem extends StatelessWidget {
                 ),
                 Icon(
                   Icons.star,
-                  color: rating >= 10 ? yellowColor : lightGreyColor,
+                  color: rating >= 10 ? yellowColor : greyColor,
                   size: 18.0,
                 ),
               ],
