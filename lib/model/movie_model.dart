@@ -8,7 +8,7 @@ class MovieModel {
   final String overview;
   // final double popularity;
   final String posterPath;
-  final String releaseDate;
+  final DateTime releaseDate;
   final String title;
   // final bool video;
   final num voteAverage;
@@ -28,7 +28,7 @@ class MovieModel {
         id: json['id'],
         overview: json['overview'],
         posterPath: json['poster_path'],
-        releaseDate: json['release_date'],
+        releaseDate: DateTime.parse(json['release_date']),
         title: json['title'],
         voteAverage: json['vote_average'],
         voteCount: json['vote_count'],
