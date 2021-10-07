@@ -12,49 +12,56 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: lightBackgroundColor,
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
-          return SafeArea(
-            child: SingleChildScrollView(
+          if (state is HomeLoading) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          if (state is HomeSuccess) {
+            return SingleChildScrollView(
               scrollDirection: Axis.vertical,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                      top: 33,
-                      left: 24,
-                      bottom: 30,
+              child: SafeArea(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 29,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Row(
                       children: [
+                        SizedBox(
+                          width: 24,
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               'Home',
                               style: blackTextStyle.copyWith(
-                                fontSize: 28.0,
+                                fontSize: 28,
                                 fontWeight: black,
                               ),
                             ),
                             SizedBox(
-                              height: 4.0,
+                              height: 4,
                             ),
                             Text(
                               'Watch much easier',
                               style: greyTextStyle.copyWith(
-                                fontSize: 16.0,
+                                fontSize: 16,
                               ),
                             ),
                           ],
                         ),
+                        Spacer(),
                         Container(
-                          width: 55.0,
-                          height: 45.0,
+                          width: 55,
+                          height: 45,
                           decoration: BoxDecoration(
                             color: whiteColor,
                             borderRadius: BorderRadius.horizontal(
-                              left: Radius.circular(259.0),
+                              left: Radius.circular(259),
                             ),
                           ),
                           child: Center(
@@ -66,57 +73,64 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        MovieCarousellItem(
-                          imageurl: 'assets/image_cover1.png',
-                          title: 'Jhon Wick 4',
-                          releaseDate: DateTime(2020, 5, 1),
-                          rating: 10,
-                        ),
-                        MovieCarousellItem(
-                          imageurl: 'assets/image_cover2.png',
-                          title: 'Bohemian',
-                          releaseDate: DateTime(2020, 5, 1),
-                          rating: 8,
-                        ),
-                      ],
+                    SizedBox(
+                      height: 30,
                     ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 24),
-                    child: Text(
-                      'From Disney',
-                      style: blackTextStyle.copyWith(
-                        fontSize: 24,
-                        fontWeight: black,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: state.data
+                            .map((e) => MovieCarousellItem(movie: e))
+                            .toList(),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  MovieListItem(
-                    imageurl: 'assets/image_cover3.png',
-                    title: 'Mulan Session',
-                    releaseDate: DateTime(2021, 7, 17),
-                    rating: 10,
-                  ),
-                  MovieListItem(
-                    imageurl: 'assets/image_cover4.png',
-                    title: 'Beauty & The Beast',
-                    releaseDate: DateTime(2021, 7, 17),
-                    rating: 10,
-                  ),
-                ],
+                    Container(
+                      margin: EdgeInsets.only(
+                        top: 30,
+                        left: 24,
+                        bottom: 20,
+                      ),
+                      child: Text(
+                        'Upcoming',
+                        style: blackTextStyle.copyWith(
+                          fontSize: 24,
+                          fontWeight: black,
+                        ),
+                      ),
+                    ),
+                    BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
+                      if (state is HomeLoading) {
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+
+                      if (state is HomeSuccess) {
+                        return Column(
+                          children: state.data
+                              .map((e) => MovieListItem(movie: e))
+                              .toList(),
+                        );
+                      }
+                      return Center(
+                        child: Text('Data Tidak Bisa Dimuat'),
+                      );
+                    }
+                        // MovieListItem(
+                        //   imageUrl: 'assets/image_detail1.png',
+                        //   title: 'Mulan Session',
+                        //   rating: 6,
+                        //   releaseDate: DateTime(2021, 6, 17),
+                        // ),
+                        ),
+                  ],
+                ),
               ),
-            ),
+            );
+          }
+
+          return Center(
+            child: Text('Data Tidak Bisa Dimuat'),
           );
         },
       ),

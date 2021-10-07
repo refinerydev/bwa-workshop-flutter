@@ -91,7 +91,7 @@ class DetailScreen extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.star,
-                          color: 10 >= 2 ? yellowColor : lightGreyColor,
+                          color: 10 >= 2 ? yellowColor : greyColor,
                           size: 18.0,
                         ),
                         SizedBox(
@@ -99,7 +99,7 @@ class DetailScreen extends StatelessWidget {
                         ),
                         Icon(
                           Icons.star,
-                          color: 10 >= 4 ? yellowColor : lightGreyColor,
+                          color: 10 >= 4 ? yellowColor : greyColor,
                           size: 18.0,
                         ),
                         SizedBox(
@@ -107,7 +107,7 @@ class DetailScreen extends StatelessWidget {
                         ),
                         Icon(
                           Icons.star,
-                          color: 10 >= 6 ? yellowColor : lightGreyColor,
+                          color: 10 >= 6 ? yellowColor : greyColor,
                           size: 18.0,
                         ),
                         SizedBox(
@@ -115,7 +115,7 @@ class DetailScreen extends StatelessWidget {
                         ),
                         Icon(
                           Icons.star,
-                          color: 10 >= 8 ? yellowColor : lightGreyColor,
+                          color: 10 >= 8 ? yellowColor : greyColor,
                           size: 18.0,
                         ),
                         SizedBox(
@@ -123,7 +123,7 @@ class DetailScreen extends StatelessWidget {
                         ),
                         Icon(
                           Icons.star,
-                          color: 10 >= 10 ? yellowColor : lightGreyColor,
+                          color: 10 >= 10 ? yellowColor : greyColor,
                           size: 18.0,
                         ),
                         SizedBox(

@@ -5,7 +5,7 @@ Color blackColor = Color(0xff0D0846);
 Color greyColor = Color(0xff929292);
 Color yellowColor = Color(0xffFFAB2E);
 Color lightGreyColor = Color(0xffE1E1EA);
-Color lightBackgroundColor = Color(0xffE5E5E5);
+Color lightBackgroundColor = Color(0xffF3F4F8);
 Color whiteColor = Color(0xffFFFFFF);
 Color darkGreyColor = Color(0xff9B99B4);
 
