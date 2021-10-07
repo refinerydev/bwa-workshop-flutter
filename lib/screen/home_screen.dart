@@ -79,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
-                        children: state.data
+                        children: state.nowPlayingMovies
                             .map((e) => MovieCarousellItem(movie: e))
                             .toList(),
                       ),
@@ -107,7 +107,7 @@ class HomeScreen extends StatelessWidget {
 
                       if (state is HomeSuccess) {
                         return Column(
-                          children: state.data
+                          children: state.upcomingPlayingMovies
                               .map((e) => MovieListItem(movie: e))
                               .toList(),
                         );

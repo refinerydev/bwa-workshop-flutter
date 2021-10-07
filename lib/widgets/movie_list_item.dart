@@ -5,19 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class MovieListItem extends StatelessWidget {
-  // final String imageUrl;
-  // final String title;
-  // final DateTime releaseDate;
-  // final double rating;
-
-  // const MovieListItem({
-  //   Key? key,
-  //   required this.imageUrl,
-  //   required this.title,
-  //   required this.releaseDate,
-  //   required this.rating,
-  // }) : super(key: key);
-
   final MovieModel movie;
 
   const MovieListItem({
@@ -32,7 +19,9 @@ class MovieListItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailScreen(),
+            builder: (context) => DetailScreen(
+              movie: movie,
+            ),
           ),
         );
       },

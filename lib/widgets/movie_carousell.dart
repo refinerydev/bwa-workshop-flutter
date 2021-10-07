@@ -5,19 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class MovieCarousellItem extends StatelessWidget {
-  // final String imageurl;
-  // final String title;
-  // final DateTime releaseDate;
-  // final double movie.voteAverage;
-
-  // const MovieCarousellItem({
-  //   Key? key,
-  //   required this.imageurl,
-  //   required this.title,
-  //   required this.releaseDate,
-  //   required this.movie.voteAverage,
-  // }) : super(key: key);
-
   final MovieModel movie;
 
   const MovieCarousellItem({
@@ -31,7 +18,11 @@ class MovieCarousellItem extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DetailScreen()),
+          MaterialPageRoute(
+            builder: (context) => DetailScreen(
+              movie: movie,
+            ),
+          ),
         );
       },
       child: Container(

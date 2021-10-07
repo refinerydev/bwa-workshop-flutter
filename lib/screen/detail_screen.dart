@@ -1,8 +1,16 @@
+import 'package:flutmov/model/movie_model.dart';
 import 'package:flutmov/screen/success_screen.dart';
 import 'package:flutmov/theme.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
+  final MovieModel movie;
+
+  const DetailScreen({
+    Key? key,
+    required this.movie,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +65,7 @@ class DetailScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(21.0),
                     image: DecorationImage(
-                      image: AssetImage('assets/image_detail1.png'),
+                      image: NetworkImage(movie.posterPath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -69,7 +77,7 @@ class DetailScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'The Dark II',
+                      movie.title,
                       style: blackTextStyle.copyWith(
                         fontSize: 20,
                         fontWeight: bold,
@@ -91,7 +99,8 @@ class DetailScreen extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.star,
-                          color: 10 >= 2 ? yellowColor : greyColor,
+                          color:
+                              movie.voteAverage >= 2 ? yellowColor : greyColor,
                           size: 18.0,
                         ),
                         SizedBox(
@@ -99,7 +108,8 @@ class DetailScreen extends StatelessWidget {
                         ),
                         Icon(
                           Icons.star,
-                          color: 10 >= 4 ? yellowColor : greyColor,
+                          color:
+                              movie.voteAverage >= 4 ? yellowColor : greyColor,
                           size: 18.0,
                         ),
                         SizedBox(
@@ -107,7 +117,8 @@ class DetailScreen extends StatelessWidget {
                         ),
                         Icon(
                           Icons.star,
-                          color: 10 >= 6 ? yellowColor : greyColor,
+                          color:
+                              movie.voteAverage >= 6 ? yellowColor : greyColor,
                           size: 18.0,
                         ),
                         SizedBox(
@@ -115,7 +126,8 @@ class DetailScreen extends StatelessWidget {
                         ),
                         Icon(
                           Icons.star,
-                          color: 10 >= 8 ? yellowColor : greyColor,
+                          color:
+                              movie.voteAverage >= 8 ? yellowColor : greyColor,
                           size: 18.0,
                         ),
                         SizedBox(
@@ -123,7 +135,8 @@ class DetailScreen extends StatelessWidget {
                         ),
                         Icon(
                           Icons.star,
-                          color: 10 >= 10 ? yellowColor : greyColor,
+                          color:
+                              movie.voteAverage >= 10 ? yellowColor : greyColor,
                           size: 18.0,
                         ),
                         SizedBox(
